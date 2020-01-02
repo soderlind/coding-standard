@@ -87,7 +87,14 @@ final class FullyQualifiedInternalFunctionsSniff implements Sniff {
 		}
 
 	}
-	private function fix( $function ): void {
+
+	/**
+	 * Prepend the internal PHP function with backslash.
+	 *
+	 * @param string $function Function name.
+	 * @return void
+	 */
+	private function fix( string $function ): void {
 		$this->fixer->replaceToken( $this->stackPtr, '\\' . $function );
 	}
 
