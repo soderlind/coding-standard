@@ -3,12 +3,12 @@
  * Summary of namespace Soderlind\Sniffs
  */
 
-namespace Soderlind\Sniffs;
+namespace Soderlind\FullyQualifiedInternalFunctions\Sniffs;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
-final class FullyQualifiedInternalFunctions implements Sniff {
+final class FullyQualifiedInternalFunctionsSniff implements Sniff {
 
 	private $fixer;
 	private $stackPtr;
