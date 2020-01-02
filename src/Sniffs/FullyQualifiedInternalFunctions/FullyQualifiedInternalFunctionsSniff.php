@@ -76,6 +76,7 @@ final class FullyQualifiedInternalFunctionsSniff implements Sniff {
 		}
 		$function = \strtolower( $tokens[ $stackPtr ]['content'] );
 
+		// Is it an internal PHP function?
 		if ( false !== isset( $this->internalFunctions[ $function ] ) ) {
 
 			$error = \sprintf( 'Function %1$s() should be referenced via a fully qualified name, e.g.: \%1$s()', $function );
