@@ -9,4 +9,8 @@
 
 Install it with `composer require --dev soderlind/coding-standard`
 
+## Use
+
+`./vendor/bin/phpcs -p test.php --standard=./vendor/soderlind/coding-standard/src/ruleset.xml`
+
 
