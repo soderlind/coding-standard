@@ -1,6 +1,6 @@
 {
 	"name": "soderlind/coding-standard",
-	"description": "Checks if all internal PHP functions are fully qualified.",
+	"description": "PHP CodeSniffer sniff that Checks if all internal PHP functions are fully qualified.",
 	"require": {
 		"php": "^7.1",
 		"squizlabs/php_codesniffer": "^3.5.3"
