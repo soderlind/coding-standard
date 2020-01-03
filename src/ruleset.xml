@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <ruleset name="FullyQualifiedInternalFunctions">
-	<description>Checks if all internal functions are fully qualified.</description>
+	<description>Checks if all internal PHP functions are fully qualified.</description>
 </ruleset>
