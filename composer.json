@@ -14,10 +14,5 @@
             "name": "Per Søderlind",
             "email": "per@soderlind.no"
         }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Soderlind\\FullyQualifiedInternalFunctionsSniff\\": "src/"
-        }
-    }
+    ]
 }
