@@ -2,17 +2,9 @@
 	"name": "soderlind/coding-standard",
 	"description": "A CodeSniffer sniff that requires that all PHP intarnal functions should have a fully qualified root name",
 	"type": "phpcodesniffer-standard",
-	"minimum-stability": "dev",
-	"prefer-stable": true,
 	"require": {
 		"php": "^7.1",
 		"squizlabs/php_codesniffer": "^3.5.3"
 	},
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Per Soderlind",
-			"email": "per@soderlind.no"
-		}
-	]
+	"license": "MIT"
 }
