@@ -55,7 +55,7 @@ To not have to pass the arguments to the command line, create a `phpcs.xml.dist`
 
 	<rule ref="WordPress" />
 
-	<!-- Here's the rull for my sniff -->
+	<!-- Here's the rule for my sniff -->
 	<rule ref="FullyQualifiedInternalFunctions" />
 
 </ruleset>
