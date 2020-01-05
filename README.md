@@ -43,6 +43,24 @@ A TOTAL OF 2 ERRORS WERE FIXED IN 1 FILE
 ----------------------------------------------------------------------
 ```
 
+To not have to pass the arguments to the command line, create a `phpcs.xml.dist` in the project folder. Something like this:
+
+```xml
+<?xml version="1.0"?>
+<ruleset name="MyProject">
+
+	<arg name="extensions" value="php" />
+	<!-- Exclude the Composer Vendor directory. -->
+	<exclude-pattern>/vendor/*</exclude-pattern>
+
+	<rule ref="WordPress" />
+
+	<!-- Here's the rull for my sniff -->
+	<rule ref="FullyQualifiedInternalFunctions" />
+
+</ruleset>
+```
+
 ## License
 
 MIT License
