@@ -16,7 +16,7 @@ Install it with `composer require --dev soderlind/coding-standard`
 ## Use
 
 ### Check
-`./vendor/bin/phpcs -p test.php --standard=./vendor/soderlind/coding-standard/src/ruleset.xml`
+`./vendor/bin/phpcs -p test.php --standard=FullyQualifiedInternalFunctions`
 
 ```
 FILE: test.php
@@ -34,7 +34,7 @@ PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 
 ### Fix
 
-`./vendor/bin/phpcbf -p test.php --standard=./vendor/soderlind/coding-standard/src/ruleset.xml`
+`./vendor/bin/phpcbf -p test.php --standard=FullyQualifiedInternalFunctions`
 
 ```
 PHPCBF RESULT SUMMARY
