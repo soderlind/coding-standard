@@ -7,7 +7,7 @@
 
 ### Why?:
 
-Function resolution without the backslash forces the PHP internals to verify for each function call if function or constant belongs to current namespace or the global namespace. With the backslash PHP does not check the current namespace and therefore execution is faster.
+Function resolution without the backslash forces the PHP internals to verify for each function call if function belongs to current namespace or the global namespace. With the backslash PHP does not check the current namespace and therefore execution is faster.
 
 ## Install
 
