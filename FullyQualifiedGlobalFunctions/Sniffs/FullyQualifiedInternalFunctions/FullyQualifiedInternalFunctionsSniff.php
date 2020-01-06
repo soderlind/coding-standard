@@ -21,7 +21,7 @@ final class FullyQualifiedGlobalFunctionsSniff implements Sniff {
 	 * @return array
 	 */
 	public function register(): array {
-		$this->globalFunctions = \array_flip( \get_defined_functions()['global'] );
+		$this->globalFunctions = \array_flip( \get_defined_functions()['internal'] );
 		return [ \T_STRING ];
 	}
 
