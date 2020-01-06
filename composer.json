@@ -1,6 +1,6 @@
 {
 	"name": "soderlind/coding-standard",
-	"description": "PHP CodeSniffer sniff that checks if all internal PHP functions are fully qualified.",
+	"description": "PHP CodeSniffer sniff that checks if all global PHP functions are fully qualified.",
 	"require": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.5"
 	},

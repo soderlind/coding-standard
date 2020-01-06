@@ -3,11 +3,11 @@
 
 ## Sniff
 
-`FullyQualifiedInternalFunctions`, a PHP CodeSniffer sniff that checks if the internal PHP functions are missing a backslash.
+`FullyQualifiedGlobalFunctions`, a PHP CodeSniffer sniff that checks if the global PHP functions are missing a backslash.
 
 ### Why?:
 
-Function resolution without the backslash forces the PHP internals to verify for each function call if function belongs to current namespace or the global namespace. With the backslash PHP does not check the current namespace and therefore execution is faster.
+Function resolution without the backslash forces the PHP globals to verify for each function call if function belongs to current namespace or the global namespace. With the backslash PHP does not check the current namespace and therefore execution is faster.
 
 ## Install
 
@@ -16,7 +16,7 @@ Install it with `composer require --dev soderlind/coding-standard`
 ## Use
 
 ### Check
-`./vendor/bin/phpcs -p test.php --standard=FullyQualifiedInternalFunctions`
+`./vendor/bin/phpcs -p test.php --standard=FullyQualifiedGlobalFunctions`
 
 ```
 FILE: test.php
@@ -34,7 +34,7 @@ PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 
 ### Fix
 
-`./vendor/bin/phpcbf -p test.php --standard=FullyQualifiedInternalFunctions`
+`./vendor/bin/phpcbf -p test.php --standard=FullyQualifiedGlobalFunctions`
 
 ```
 PHPCBF RESULT SUMMARY
@@ -54,13 +54,11 @@ To not have to pass the arguments to the command line, create a `phpcs.xml.dist`
 <ruleset name="MyProject">
 
 	<arg name="extensions" value="php" />
-	<!-- Exclude the Composer Vendor directory. -->
 	<exclude-pattern>/vendor/*</exclude-pattern>
-
 	<rule ref="WordPress" />
 
 	<!-- Here's the rule for my sniff -->
-	<rule ref="FullyQualifiedInternalFunctions" />
+	<rule ref="FullyQualifiedGlobalFunctions" />
 
 </ruleset>
 ```

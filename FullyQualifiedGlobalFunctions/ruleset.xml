@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<ruleset name="FullyQualifiedGlobalFunctions">
+	<description>Checks if all global PHP functions are fully qualified.</description>
+</ruleset>

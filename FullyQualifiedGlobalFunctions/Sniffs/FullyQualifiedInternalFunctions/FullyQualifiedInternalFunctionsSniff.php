@@ -3,16 +3,16 @@
  * Summary of namespace Soderlind\Sniffs
  */
 
-namespace Soderlind\FullyQualifiedInternalFunctions\Sniffs;
+namespace Soderlind\FullyQualifiedGlobalFunctions\Sniffs;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
-final class FullyQualifiedInternalFunctionsSniff implements Sniff {
+final class FullyQualifiedGlobalFunctionsSniff implements Sniff {
 
 	private $fixer;
 	private $stackPtr;
-	private $internalFunctions = [];
+	private $globalFunctions = [];
 
 	/**
 	 * Returns an array of tokens this test wants to listen for.
@@ -21,7 +21,7 @@ final class FullyQualifiedInternalFunctionsSniff implements Sniff {
 	 * @return array
 	 */
 	public function register(): array {
-		$this->internalFunctions = \array_flip( \get_defined_functions()['internal'] );
+		$this->globalFunctions = \array_flip( \get_defined_functions()['global'] );
 		return [ \T_STRING ];
 	}
 
@@ -76,11 +76,11 @@ final class FullyQualifiedInternalFunctionsSniff implements Sniff {
 		}
 		$function = \strtolower( $tokens[ $stackPtr ]['content'] );
 
-		// Is it an internal PHP function?
-		if ( false !== isset( $this->internalFunctions[ $function ] ) ) {
+		// Is it an global PHP function?
+		if ( false !== isset( $this->globalFunctions[ $function ] ) ) {
 
 			$error = \sprintf( 'Function %1$s() should be referenced via a fully qualified name, e.g.: \%1$s()', $function );
-			$fix   = $phpcsFile->addFixableError( $error, $stackPtr, 'FullyQualifiedInternalFunctions' );
+			$fix   = $phpcsFile->addFixableError( $error, $stackPtr, 'FullyQualifiedGlobalFunctions' );
 
 			if ( true === $fix ) {
 				$this->fix( $function );
@@ -90,7 +90,7 @@ final class FullyQualifiedInternalFunctionsSniff implements Sniff {
 	}
 
 	/**
-	 * Prepend the internal PHP function with backslash.
+	 * Prepend the global PHP function with backslash.
 	 *
 	 * @param string $function Function name.
 	 * @return void
