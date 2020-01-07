@@ -26,13 +26,13 @@ Create a `phpcs.xml.dist` in the project root folder. Something like this:
 	<rule ref="WordPress" />
 
 	<!-- Here's the rule for my sniff -->
-	<ruleset name="FullyQualifiedGlobalFunctions">
+	<rule name="FullyQualifiedGlobalFunctions">
 		<description>Checks if global PHP functions are fully qualified.</description>
 		<properties>
 			<!-- whether to add backslash to all gobal functions or only optimized global funtions -->
-			<property name="onlyOptimizedFunctions" value="false"/>
+			<property name="onlyOptimizedFunctions" value="true"/>
 		</properties>
-	</ruleset>
+	</rule>
 
 </ruleset>
 ```
