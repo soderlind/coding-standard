@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
 <ruleset name="FullyQualifiedGlobalFunctions">
-	<description>Checks if all global PHP functions are fully qualified.</description>
+	<description>Checks if global PHP functions are fully qualified.</description>
+	<properties>
+		<!-- whether to add backslash to all gobal functions or only optimized global funtions -->
+		<property name="onlyOptimizedFunctions" value="false"/>
+	</properties>
 </ruleset>
