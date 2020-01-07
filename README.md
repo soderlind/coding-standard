@@ -15,8 +15,32 @@ Install it with `composer require --dev soderlind/coding-standard`
 
 ## Use
 
+Create a `phpcs.xml.dist` in the project root folder. Something like this:
+
+```xml
+<?xml version="1.0"?>
+<ruleset name="MyProject">
+
+	<arg name="extensions" value="php" />
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<rule ref="WordPress" />
+
+	<!-- Here's the rule for my sniff -->
+	<ruleset name="FullyQualifiedGlobalFunctions">
+		<description>Checks if global PHP functions are fully qualified.</description>
+		<properties>
+			<!-- whether to add backslash to all gobal functions or only optimized global funtions -->
+			<property name="onlyOptimizedFunctions" value="false"/>
+		</properties>
+	</ruleset>
+
+</ruleset>
+```
+
+If you set `onlyOptimizedFunctions` to true, backslash will only be added to [optimized functions](https://github.com/soderlind/coding-standard/blob/master/FullyQualifiedGlobalFunctions/Sniffs/FullyQualifiedInternalFunctions/FullyQualifiedInternalFunctionsSniff.php#L21-L61).
+
 ### Check
-`./vendor/bin/phpcs -p test.php --standard=FullyQualifiedGlobalFunctions`
+`./vendor/bin/phpcs -p test.php`
 
 ```
 FILE: test.php
@@ -34,7 +58,7 @@ PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 
 ### Fix
 
-`./vendor/bin/phpcbf -p test.php --standard=FullyQualifiedGlobalFunctions`
+`./vendor/bin/phpcbf -p test.php`
 
 ```
 PHPCBF RESULT SUMMARY
@@ -47,21 +71,11 @@ A TOTAL OF 2 ERRORS WERE FIXED IN 1 FILE
 ----------------------------------------------------------------------
 ```
 
-To not have to pass the arguments to the command line, create a `phpcs.xml.dist` in the project folder. Something like this:
+### Command line
 
-```xml
-<?xml version="1.0"?>
-<ruleset name="MyProject">
+Instead of adding the rule to your `phpcs.xml.dist` file, you can run it from the command line, e.g.:
 
-	<arg name="extensions" value="php" />
-	<exclude-pattern>/vendor/*</exclude-pattern>
-	<rule ref="WordPress" />
-
-	<!-- Here's the rule for my sniff -->
-	<rule ref="FullyQualifiedGlobalFunctions" />
-
-</ruleset>
-```
+`./vendor/bin/phpcbf -p test.php --standard=FullyQualifiedGlobalFunctions --runtime-set onlyOptimizedFunctions true`
 
 ## License
 
