@@ -37,7 +37,7 @@ Create a `phpcs.xml.dist` in the project root folder. Something like this:
 </ruleset>
 ```
 
-If you set `onlyOptimizedFunctions` to true, backslash will only be added to [optimized functions](https://github.com/soderlind/coding-standard/blob/master/FullyQualifiedGlobalFunctions/Sniffs/FullyQualifiedInternalFunctions/FullyQualifiedInternalFunctionsSniff.php#L21-L61).
+If you set `onlyOptimizedFunctions` to true, backslash will only be added to [optimized functions](https://github.com/soderlind/coding-standard/blob/master/FullyQualifiedGlobalFunctions/Sniffs/FullyQualifiedGlobalFunctionsSniff.php#L21-L61).
 
 ### Check
 `./vendor/bin/phpcs -p test.php`
