@@ -39,6 +39,8 @@ Create a `phpcs.xml.dist` in the project root folder. Something like this:
 
 If you set `onlyOptimizedFunctions` to true, backslash will only be added to [optimized functions](https://github.com/soderlind/coding-standard/blob/master/FullyQualifiedGlobalFunctions/Sniffs/FullyQualifiedGlobalFunctionsSniff.php#L21-L61).
 
+**NOTE**, this doesn' work atm. If you want to add backslash only to the optimized functions, [use the command line](#command-line)
+
 ### Check
 `./vendor/bin/phpcs -p test.php`
 
